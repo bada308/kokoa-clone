@@ -23,10 +23,6 @@
   margin: 0px 30px;
 }
 
-input:focus {
-  outline: none;
-}
-
 #login-form input {
   border: none;
   padding: 16px 0px;
