@@ -27,7 +27,7 @@
 .more-suggestions__icon-image {
   height: 60px;
   width: 60px;
-  background-color: var(--yellow);
+  background-color: #f48fb1;
   border-radius: 10px;
   display: flex;
   justify-content: center;

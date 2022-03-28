@@ -1,14 +1,25 @@
 #chat-screen {
-  background-color: #abc1d1;
-  height: 11000vh;
+  background-color: var(--pink);
+  height: 500vh;
 }
 #chat-screen .status-bar,
 #chat-screen .alt-header {
-  background-color: #abc1d1;
+  background-color: var(--pink);
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
 }
 
 .main-chat {
-  margin-top: 10px;
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,17 +27,36 @@
 
 .chat__timestamp {
   color: white;
-  background-color: #92a4b2;
+  background-color: #92a4b2cc;
   padding: 10px 15px;
   border-radius: 22px;
   font-size: 14px;
   margin-bottom: 25px;
+  animation: fadeIn 0.8s linear;
+}
+
+@keyframes messageMoving1 {
+  0% {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+  50% {
+    transform: translateX(-300px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .message-row {
   width: 100%;
   display: flex;
   margin-bottom: 25px;
+}
+
+.message-row--other {
+  animation: messageMoving1 1.5s ease-in-out;
 }
 
 .message-row img {
@@ -61,15 +91,30 @@
   font-size: 13px;
 }
 
+@keyframes messageMoving2 {
+  0% {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+  75% {
+    transform: translateX(300px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .message-row--own {
   justify-content: flex-end;
+  animation: messageMoving2 2s ease-in-out;
 }
 
 .message-row--own .message__info {
   flex-direction: row-reverse;
 }
 .message-row--own .message__bubble {
-  background-color: var(--yellow);
+  background-color: #f48fb1;
   border-top-right-radius: 0px;
   border-top-left-radius: 14px;
   margin-left: 5px;
@@ -107,6 +152,7 @@
   border: var(--main-border);
   border-radius: 20px;
   padding: 11px;
+  transition: all 0.3s ease-in-out;
 }
 
 .reply__column:last-child > i,
@@ -136,4 +182,21 @@
 .reply__column button:active,
 .reply__column button:focus {
   outline: none;
+}
+
+.reply .reply__column:first-child,
+.reply .fa-smile-beam,
+.reply button {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.reply:focus-within .reply__column:first-child,
+.reply:focus-within .fa-smile-beam,
+.reply:focus-within button {
+  opacity: 0;
+}
+
+.reply input:focus {
+  width: 92vw;
+  transform: translateX(-6%);
 }

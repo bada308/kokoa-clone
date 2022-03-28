@@ -1,3 +1,15 @@
+@keyframes notificationAnimation {
+  0% {
+    transform: none;
+  }
+  50% {
+    transform: translateY(-5px) rotateY(-30deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+
 .badge {
   background-color: tomato;
   width: 25px;
@@ -8,4 +20,5 @@
   border-radius: 12.5px;
   color: white;
   font-weight: 600;
+  animation: notificationAnimation 1s ease-in-out;
 }

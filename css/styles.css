@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap");
 @import "reset.css";
 @import "variables.css";
 
@@ -10,6 +11,7 @@
 @import "components/point.css";
 @import "components/icon-row.css";
 @import "components/alt-screen-header.css";
+@import "components/no-mobile.css";
 
 /*Screenss*/
 @import "screens/login.css";
@@ -30,4 +32,10 @@ body {
   padding: 15px var(--horizontal-space);
   position: relative;
   top: 100px;
+}
+
+div,
+span,
+body {
+  font-family: "Nunito", sans-serif;
 }

@@ -21,3 +21,49 @@
   margin-left: 20px;
   position: relative;
 }
+
+@keyframes scaleBigSearch {
+  from {
+    transform: none;
+  }
+  to {
+    transform: scale(1.3);
+  }
+}
+
+.screen-header__icons .fa-search:hover {
+  animation: scaleBigSearch 0.5s ease-in-out forwards;
+}
+
+@keyframes moveMusic {
+  0% {
+    transform: none;
+  }
+  33% {
+    transform: rotateZ(15deg);
+  }
+
+  66% {
+    transform: rotateZ(-15deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+.screen-header__icons .fa-music:hover {
+  animation: moveMusic 1s ease-in-out infinite;
+}
+
+@keyframes rotateCog {
+  from {
+    transform: none;
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+.screen-header__icons .fa-cog:hover {
+  animation: rotateCog 2s linear infinite;
+}
